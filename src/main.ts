@@ -1,3 +1,3 @@
-import { hello } from '@/hello'
+import { bot } from '@/bot/core/bot'
 
-hello()
+bot().then(() => console.log('Bot started'))

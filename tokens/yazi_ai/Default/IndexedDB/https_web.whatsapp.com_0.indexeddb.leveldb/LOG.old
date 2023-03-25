@@ -1,0 +1,9 @@
+2023/03/25-01:24:27.481 9203 Reusing MANIFEST /Users/gabrielmaia/Documents/yazo/yazi-ai/tokens/yazi_ai/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/03/25-01:24:27.482 9203 Recovering log #29
+2023/03/25-01:24:27.491 9203 Reusing old log /Users/gabrielmaia/Documents/yazo/yazi-ai/tokens/yazi_ai/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000029.log 
+2023/03/25-01:29:54.433 15f2f Compacting 1@0 + 1@1 files
+2023/03/25-01:29:54.483 15f2f Generated table #32@0: 29546 keys, 582850 bytes
+2023/03/25-01:29:54.483 15f2f Compacted 1@0 + 1@1 files => 582850 bytes
+2023/03/25-01:29:54.491 15f2f compacted to: files[ 0 1 1 0 0 0 0 ]
+2023/03/25-01:29:54.492 15f2f Delete type=2 #27
+2023/03/25-01:29:54.492 15f2f Delete type=2 #30
