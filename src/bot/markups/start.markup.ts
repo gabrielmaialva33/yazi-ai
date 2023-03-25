@@ -1,3 +1,1 @@
-import {  } from 'venom-bot'
-
-export const StartMarkup =
+export const StartMarkup = () => {}

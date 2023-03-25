@@ -37,7 +37,8 @@
     "rules": {
       "prettier/prettier": [
         "error"
-      ]
+      ],
+      "@typescript-eslint/naming-convention": "off"
     }
   },
   "eslintIgnore": [
@@ -65,12 +66,13 @@
     "@japa/run-failed-tests": "^1.1.1",
     "@japa/runner": "^2.5.1",
     "@japa/spec-reporter": "^1.3.3",
-    "@types/node": "^18.15.8",
+    "@types/node": "^18.15.9",
     "@typescript-eslint/eslint-plugin": "^5.56.0",
     "@typescript-eslint/parser": "^5.56.0",
     "babel-plugin-module-resolver": "^5.0.0",
     "babel-plugin-transform-typescript-metadata": "^0.3.2",
     "babel-plugin-tsconfig-paths-module-resolver": "^1.0.4",
+    "chalk": "^4.1.2",
     "eslint": "^8.36.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-adonis": "^2.1.1",
