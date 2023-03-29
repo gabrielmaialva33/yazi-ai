@@ -28,10 +28,10 @@ class OpenAI extends OpenAIApi {
       {
         prompt,
         model: 'text-davinci-003',
-        temperature: Math.random() * (0.8 - 0.3) + 0.3,
+        temperature: 0.9,
         max_tokens: 200,
-        frequency_penalty: Math.random() * (0.7 - 0.3) + 0.3,
-        presence_penalty: Math.random() * (0.3 - 0.1) + 0.1,
+        frequency_penalty: Math.random() * (1.5 - 0.5) + 0.5,
+        presence_penalty: Math.random() * (1.0 - 0.5) + 0.5,
         stop: ['|'],
       },
       { timeout: 30000 }
