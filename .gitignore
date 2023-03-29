@@ -11,3 +11,5 @@ tmp/history.gpt.txt
 tmp/system.gpt.txt
 tmp/main.gpt.txt
 tokens
+image.jpeg
+image.jpeg.png
