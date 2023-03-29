@@ -1,5 +1,4 @@
 import { Message, Whatsapp } from 'venom-bot'
-import { LastReceivedKey } from 'venom-bot/dist/api/model/message'
 
 export type MiddlewareFn = (message: Message, client: Whatsapp) => void
 

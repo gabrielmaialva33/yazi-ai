@@ -1,4 +1,4 @@
-import { Message, Whatsapp } from 'venom-bot'
+import { Whatsapp } from 'venom-bot'
 
 import { CustomMessage, MiddlewareFn } from '@/types'
 
@@ -11,6 +11,7 @@ export const HistoryMiddleware: MiddlewareFn = async (message: CustomMessage, cl
   try {
     if (StringUtils.text_includes(message.body, ['yazi'])) return
     if (message.type === 'reply' && message.quotedParticipant === '5515996601743@c.us') return
+    if (message.type === 'image') return
 
     const context = await ContextUtils.get_context(message, client)
     const history = HistoryUtils.build_chat_history(context)

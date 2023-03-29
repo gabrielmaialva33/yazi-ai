@@ -1,2 +1,2 @@
-export * from './yazi.middleware'
+export * from './gpt.middleware'
 export * from './history.middleware'

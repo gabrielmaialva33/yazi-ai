@@ -6,13 +6,17 @@ import { DateTime } from 'luxon'
 
 export const ContextUtils = {
   get_user: async (message: Message, client: Whatsapp): Promise<User> => {
-    const user = await client.getContact(message.author)
+    const user = await client.getContact(message.author ? message.author : message.from)
     const datetime = DateTime.local({ zone: 'America/Sao_Paulo' }).toFormat('dd/MM/yyyy HH:mm:ss')
 
     return {
-      id: user.id._serialized,
-      name: StringUtils.normalize_username(user.pushname),
-      username: StringUtils.normalize_username(user.pushname).replace(/[^a-zA-Z0-9_-]/g, '_'),
+      id: user.id['_serialized'] ? user.id['_serialized'] : user.id._serialized,
+      // @ts-ignore
+      name: StringUtils.normalize_username(user.pushname ? user.pushname : user['displayName']),
+      username: StringUtils.normalize_username(
+        // @ts-ignore
+        user.pushname ? user.pushname : user['displayName']
+      ).replace(/[^a-zA-Z0-9_-]/g, '_'),
       phone: user.id.user,
       avatar: user.profilePicThumbObj.imgFull ? user.profilePicThumbObj.imgFull : undefined,
       message: StringUtils.normalize_text(message.body),
@@ -22,13 +26,19 @@ export const ContextUtils = {
 
   get_reply_to_user: async (message: Message | any, client: Whatsapp) => {
     if (!(message.type === 'reply')) return
-    const user = await client.getContact(message.quotedParticipant)
+    const user = await client.getContact(
+      message.quotedParticipant ? message.quotedParticipant : message.from
+    )
     const datetime = DateTime.local({ zone: 'America/Sao_Paulo' }).toFormat('dd/MM/yyyy HH:mm:ss')
 
     return {
       id: user.id._serialized,
-      name: StringUtils.normalize_username(user.pushname),
-      username: StringUtils.normalize_username(user.pushname).replace(/[^a-zA-Z0-9_-]/g, '_'),
+      // @ts-ignore
+      name: StringUtils.normalize_username(user.pushname ? user.pushname : user['displayName']),
+      username: StringUtils.normalize_username(
+        // @ts-ignore
+        user.pushname ? user.pushname : user['displayName']
+      ).replace(/[^a-zA-Z0-9_-]/g, '_'),
       phone: user.id.user,
       avatar: user.profilePicThumbObj.imgFull ? user.profilePicThumbObj.imgFull : undefined,
       message: message.quotedMsg ? message.quotedMsg.body : undefined,

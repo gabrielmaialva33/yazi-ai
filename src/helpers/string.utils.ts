@@ -1,5 +1,7 @@
 export const StringUtils = {
   normalize_username: (first_name: string) => {
+    if (!first_name) return 'no_username'
+
     const username = first_name
       .normalize('NFKC')
       .replace(/[\u0300-\u036f]/g, '')
@@ -19,6 +21,8 @@ export const StringUtils = {
   },
 
   normalize_text: (text: string) => {
+    if (!text) return ''
+
     const source = text
       .normalize('NFKC')
       .replace(/\s+/g, ' ')
@@ -28,6 +32,7 @@ export const StringUtils = {
   },
 
   text_includes: (text: string, includes: string[]) => {
+    if (!text) return false
     return includes.some((include) => text.toLowerCase().includes(include))
   },
 

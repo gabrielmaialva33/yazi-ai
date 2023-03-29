@@ -1,6 +1,6 @@
 import { create, Message, Whatsapp } from 'venom-bot'
 
-import { HistoryMiddleware, YaziMiddleware } from '@/bot/middlewares'
+import { GptMiddleware, HistoryMiddleware } from '@/bot/middlewares'
 
 export const Bot = async () =>
   await create({
@@ -11,6 +11,6 @@ export const Bot = async () =>
 const start = async (client: Whatsapp) => {
   await client.onMessage(async (message: Message) => {
     await HistoryMiddleware(message, client)
-    await YaziMiddleware(message, client)
+    await GptMiddleware(message, client)
   })
 }
