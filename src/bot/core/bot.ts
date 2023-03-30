@@ -5,7 +5,8 @@ import { GptMiddleware, HistoryMiddleware } from '@/bot/middlewares'
 export const Bot = async () =>
   await create({
     session: 'yazi_ai',
-    multidevice: true,
+    disableWelcome: true,
+    disableSpins: false,
   }).then((client) => start(client))
 
 const start = async (client: Whatsapp) => {
