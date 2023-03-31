@@ -133,11 +133,11 @@ class OpenAI extends OpenAIApi {
       model: 'gpt-3.5-turbo',
       stop: ['|'],
       max_tokens: 500,
-      temperature: 1,
-      presence_penalty: Math.random() * (0.3 - 0.1) + 0.1,
-      frequency_penalty: Math.random() * (1.0 - 0.5) + 0.5,
+      temperature: Math.random() * (1.0 - 0.5) + 0.5,
+      presence_penalty: Math.random() * (1.5 - 0.5) + 0.5,
+      frequency_penalty: Math.random() * (0.5 - 0.1) + 0.1,
       messages: messages,
-      n: 1,
+      n: Math.floor(Math.random() * (3 - 1) + 1),
     })
   }
 }
