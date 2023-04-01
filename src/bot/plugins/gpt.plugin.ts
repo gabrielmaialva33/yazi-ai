@@ -38,7 +38,7 @@ class OpenAI extends OpenAIApi {
         max_tokens: 700,
         frequency_penalty: Math.random() * (0.5 - 0.3) + 0.3,
         presence_penalty: Math.random() * (1.5 - 0.5) + 0.5,
-        top_p: Math.random() * (1.0 - 0.5) + 0.5,
+        n: Math.floor(Math.random() * (3 - 1) + 1),
         stop: ['|'],
       },
       { timeout: 30000 }
