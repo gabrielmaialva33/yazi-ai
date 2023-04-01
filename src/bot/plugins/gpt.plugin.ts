@@ -34,10 +34,11 @@ class OpenAI extends OpenAIApi {
       {
         prompt,
         model: 'text-davinci-003',
-        temperature: Math.random() * (1.0 - 0.7) + 0.7,
-        max_tokens: 500,
-        frequency_penalty: Math.random() * (1.5 - 0.5) + 0.5,
-        presence_penalty: Math.random() * (0.8 - 0.2) + 0.2,
+        temperature: Math.random() * (0.9 - 0.4) + 0.4,
+        max_tokens: 700,
+        frequency_penalty: Math.random() * (0.5 - 0.3) + 0.3,
+        presence_penalty: Math.random() * (1.5 - 0.5) + 0.5,
+        top_p: Math.random() * (1.0 - 0.5) + 0.5,
         stop: ['|'],
       },
       { timeout: 30000 }
@@ -63,7 +64,7 @@ class OpenAI extends OpenAIApi {
     const image = await jimp.read(`${path}.png`)
     await image.resize(512, 512).writeAsync(`${path}.png`)
 
-    Logger.info(`Variating image: ${path}.png`, 'IA')
+    Logger.info(`variating image: ${path}.png`, 'IA')
 
     return this.createImageVariation(fs.createReadStream(`${path}.png`) as any, 1, '512x512', 'url')
   }

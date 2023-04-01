@@ -56,11 +56,11 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.21.0",
-    "@babel/core": "^7.21.3",
+    "@babel/core": "^7.21.4",
     "@babel/plugin-proposal-decorators": "^7.21.0",
     "@babel/plugin-transform-typescript": "^7.21.3",
-    "@babel/preset-env": "^7.20.2",
-    "@babel/preset-typescript": "^7.21.0",
+    "@babel/preset-env": "^7.21.4",
+    "@babel/preset-typescript": "^7.21.4",
     "@types/luxon": "^3.2.0",
     "@types/node": "^18.15.11",
     "@typescript-eslint/eslint-plugin": "^5.57.0",
@@ -78,7 +78,7 @@
     "prettier": "^2.8.7",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.0.2",
+    "typescript": "^5.0.3",
     "yarn-upgrade-all": "^0.7.2"
   },
   "dependencies": {
